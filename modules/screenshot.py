@@ -29,7 +29,7 @@ mem_dc.SelectObject(screenshot)
 mem_dc.BitBlt((0,0),(width,height),img_dc,(left,top),win32con.SRCCOPY)
 
 # save the bitmap to a file
-screenshot.SaveBitmapFile(mem_dc, "c:\\WINDOWS\\Temp\\screenshot"+"+random.randint(1,10000)+".bmp")
+screenshot.SaveBitmapFile(mem_dc, "c:\\WINDOWS\\Temp\\screenshot"+random.randint(1,10000)+".bmp")
 
 # free our objects
 mem_dc.DeleteDC()
