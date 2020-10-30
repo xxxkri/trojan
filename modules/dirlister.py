@@ -3,7 +3,7 @@ import os
 dirname="."
 has_args=0
 def run(**args):
-    print "[*] In dirlister module."
+    print ("[*] In dirlister module.");
     global has_args
     global dirname
     for a in args:
