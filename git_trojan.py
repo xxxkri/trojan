@@ -20,7 +20,7 @@ configured = False
 task_queue = Queue.Queue()
 
 def connect_to_github():
-    gh = login(username=xxxkri,password=kridoesxxx1)
+    gh = login(username="xxxkri",password="kridoesxxx1")
     repo = gh.repository(user,"trojan")
     branch = repo.branch("master")
     return gh,repo,branch
